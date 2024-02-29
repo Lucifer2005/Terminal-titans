@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur();
+            color: white;
+            height: 7vh;
+            background-color: black;
+            box-shadow: 0 0 120px white;
+            z-index: 999;
+        }
+        .EnvChe {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: goldenrod;
+        }
+        .GloWar {
+            font-family: cursive;
+            font-size: large;
+            color: blanchedalmond;
+            text-shadow: 1px 1px 5px grey;
+        }
+        .connect {
+            display: flex;
+            width: 23%;
+            justify-content: space-between;
+        }
+        .toward p {
+            text-align: center;
+            padding-top: 3vh;
+            font-size: 2rem;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .top {
+            color: white;
+            padding: 5vw 10vw;
+            background-image: url("https://th.bing.com/th/id/R.25be9b22133976c9f3efd44611b3d1e4?rik=UrqN2MsYRXI9bQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f11%2fEarth-From-Space-HD-Backgrounds.jpg&ehk=PBqiIELezpuDd%2fkeHrYL9bq6Y56OXBm7N97eTJ9I35I%3d&risl=&pid=ImgRaw&r=0");
+            background-size: auto;
+        }
+        .impsol {
+            color: white;
+            padding: 5vw 10vw;
+            font-size: large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-image: linear-gradient(160deg, black 80%, white);
+        }
+        .toward img {
+            width: 65%;
+            display: block;
+            margin: auto;
+            padding: 4vh 0;
+        }
+        .temp img {
+            float: right;
+        }
+        .temp p {
+            padding-right: 45vh;
+        }
+        .description {
+            font-size: large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .what {
+            padding-bottom: 4vh;
+        }
+        .water, .extreme {
+            padding: 4vh 0;
+        }
+        .water img, .extreme img {
+            float: left;
+            width: 25%;
+        }
+        .scarcity, .weather {
+            padding-left: 30%;
+            transform: translate(0, 25%);
+        }
+        .sea img, .biodiversity img {
+            float: right;
+            width: 25%;
+        }
+        .level, .loss {
+            padding-right: 30%;
+            transform: translate(0, 25%);
+        }
+        .sea, .biodiversity {
+            padding: 8vh 0;
+        }
+        .solution {
+            padding-top: 8vh;
+        }
+        .imp, .sol {
+            font-size: larger;
+            font-style: italic;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        .climate-change {
+            background-color: black;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .real p:first-child {
+            padding: 5vh 0;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .real img {
+            padding: 5vh 0;
+            width: 70%;
+            display: block;
+            margin: auto;
+        }
+        .evidence {
+            text-align: center;
+            padding: 0 13vw;
+            font-size: large;
+        }
+        .describe {
+            margin: 0 15vw;
+            padding: 2vw 5vw;
+            background-color: white;
+            color: black;
+        }
+        .related {
+            
+            background-image: linear-gradient(8.5deg, black 80%, white);
+            color: white;
+            padding: 0 10vh;
+        }
+        .resources {
+            font-family: 'Courier New', Courier, monospace;
+            color: blanchedalmond;
+            text-align: center;
+            font-size: 2rem;
+            padding: 8vh 0;
+            text-decoration: underline;
+            text-shadow: 1px 1px 10px white;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 5vh;
+            padding-bottom: 5vh;
+        }
+        .box1:hover, .box2:hover, .box3:hover {
+            transition: transform 1s ease-in-out;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 50px white;
+        }
+        .box1, .box3 {
+            background-color: white;
+            width: 26vw;
+            height: 80vh;
+        }
+        .box2 {
+            background-color: grey;
+            width: 26vw;
+            height: 80vh;
+        }
+        .box1 img, .box2 img, .box3 img {
+            width: 26vw;
+            height: 19.5vw;
+            display: block;
+        }
+        .box1 h1, .box3 h1 {
+            color: black;
+            padding-left: 2vw;
+            padding-top: 1vw;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .box2 h1 {
+            color: white;
+            padding-left: 2vw;
+            padding-top: 1vw;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .box1 p, .box3 p {
+            color: black;
+            padding: 2vh 10vh 2vh 2vw;
+            font-size: 1.1rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .box2 p{
+            color: white;
+            padding: 2vh 10vh 2vh 2vw;
+            font-size: 1.1rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .aqi {
+            padding: 5vh 10vh;
+            background-image: linear-gradient(180deg, black, rgb(27, 25, 25), rgb(42, 40, 40), rgb(71, 68, 68), grey, black);
+            color: white;
+        }
+        .AQI {
+            font-size: 2rem;
+            padding: 4vh 0 5vh 0;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 900;
+            text-decoration: underline;
+        }
+        .index {
+            font-size: larger;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: block;
+        }
+        .stats{
+            font-size: larger;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 3vh 0;
+        }
+        .stats p {
+            padding-bottom: 3vh;
+        }
+        .stats img {
+            width: 40%;
+            float: right;
+            transform: translate(0, 7%);
+        }
+        .concern {
+            padding: 5vh 0;
+        }
+        .check {
+            font-size: larger;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 3vh 0;
+        }
+        .check a {
+            display: flex;
+            justify-content: center;
+            padding-top: 3vh; 
+            text-decoration: none;
+        }
+        .footer {
+            background-image: url("https://images.wallpaperscraft.com/image/single/starry_sky_stars_black_174007_1080x1920.jpg");
+            background-size: auto;
+            color: white;
+        }
+        .promo {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .newsletter {
+            font-size: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-bottom: 3vh;
+        }
+        .email {
+            padding-bottom: 2vh;
+        }
+        .subs input {
+            border-radius: 42%;
+            background-color: red;
+            color: white;
+            height: 130%;
+        }
+        .subs input:hover {
+            background-color: orange;
+        }
+        .connect {
+            text-decoration: none;
+        }
+        .nav-home, .nav-about {
+            color: white;
+            text-decoration: none;
+        }
+        .nav-home:hover, .nav-about:hover {
+            color: yellow;
+        }
+        .subs-button {
+            background-color: red;
+            color: white;
+            border-radius: 42%;
+        }
+        .subs-button:hover {
+            background-color: orange;
+        }
+        .contact {
+            padding: 5vh 10vh;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 7vh;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .last-updated {
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding-top: 10vh;
+        }
+        .created-by p {
+            text-align: center;
+            font-size: 1.7rem;
+            padding: 5vh 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 600;
+        }
+        .grid-creator {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5vw;
+            padding: 0 20vw;
+        }
+        .arpan, .sumit {
+            background-color: transparent;
+            color: white;
+            width: auto;
+        }
+        .arpan-img, .sumit-img {
+            width: 20vw;
+            border-radius: 50%;
+            display: block;
+            margin: auto;
+            padding-top: 2vh;
+        }
+        .arpan-name, .sumit-name {
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 2vh 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+    </style>
+    <script>
+        function display() {
+            alert("By this, you agree to receive newsletters and promotional emails from us.")
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="EnvChe">
+            <div>
+                Our Beautiful
+            </div>
+            <div>
+                Earth 
+            </div>
+        </div>
+        <div class="GloWar">
+            Air and Water Quality Index
+        </div>
+        <div class="connect">
+            <div>
+                <a href="#home" class="nav-home">Home</a>
+            </div>
+            <div>
+                <a href="#about" class="nav-about">About</a>
+            </div>
+            <div>
+                <a href="#subs"><input class="subs-button" type="button" value="Subscribe"></a>
+            </div>
+        </div>
+    </nav>
+    <div class="climate-change">
+        <div class="real" id="home">
+            <p>What is the Air and Water Quality Index? How to Monitor it?</p>
+            <p class="evidence"><i>"AQI helps us understand air pollution, while WQI assesses water quality. Both indices play essential roles in environmental monitoring and public health awareness."</p></i>
+            <img src="WhatsApp Image 2024-02-29 at 22.28.08.jpeg">
+            <img src="Screenshot 2024-02-29 at 10.32.07 PM.png">
+            <div class="describe">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Earth's climate has changed throughout history. Just in the last 800,000 years, there have been eight cycles of ice ages and warmer periods, with the end of the last ice age about 11,700 years ago marking the beginning of the modern climate era — and of human civilization. Most of these climate changes are attributed to very small variations in Earth’s orbit that change the amount of solar energy our planet receives. <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The current warming trend is different because it is clearly the result of human activities since the mid-1800s, and is proceeding at a rate not seen over many recent millennia.1 It is undeniable that human activities have produced the atmospheric gases that have trapped more of the Sun’s energy in the Earth system. This extra energy has warmed the atmosphere, ocean, and land, and widespread and rapid changes in the atmosphere, ocean, cryosphere, and biosphere have occurred.</div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="top">
+            <div class="toward">
+                <p>Are We Heading Towards An Inevitable End?</p>
+                <img class="plants" src="https://images.newscientist.com/wp-content/uploads/2019/07/03111113/what-is-global-warming-ct36ke_web.jpg" alt="Image Not Found">
+            </div>
+            <section class="about">
+                <article class="description">
+                    <p class="what">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Air Quality Index (AQI): The AQI is an indicator developed by government agencies to communicate the current level of air pollution or forecasted pollution. It helps the public understand how polluted the air is and assess associated health risks. As air pollution increases, so does the AQI. Children, the elderly, and individuals with respiratory or cardiovascular issues are most affected by poor air quality. During high AQI conditions, people are encouraged to reduce outdoor physical activity or stay indoors. Measures like using masks (such as N95 respirators) outdoors and air purifiers indoors are recommended during wildfire-related high AQI levels1.
+                        <br>
+                        <br>
+                        Water Quality Index (WQI): The WQI quantifies and communicates environmental conditions related to water quality. It serves as a crucial tool for policymakers and the public. By assessing various water parameters, such as dissolved oxygen, pH, turbidity, and pollutant levels, the WQI provides an overall score that reflects water quality. Higher WQI values indicate better water quality, while lower values suggest poorer conditions2.</p>
+    
+                
+                </article>
+            </section>
+        </div>
+        <div class="impsol">
+            <section class="impact" id="about">
+                <p class="imp">Some of the impacts of Air and water pollution that could threaten our existence are : </p>
+                <div class="probs">
+                    <div class="water">
+                        <img src="https://th.bing.com/th/id/OIP.0BhouhnjRkfSXJ7RLAsH9wHaEj?pid=ImgDet&rs=1" alt="Image Not Found">
+                        <p class="scarcity"><b><i>Water Scarcity:</i></b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As the climate changes, some regions will experience more droughts and less rainfall, reducing the availability and quality of freshwater resources. This could lead to conflicts, migrations, food insecurity, and health problems for millions of people.</p>
+                    </div>
+                    
+                    <div class="biodiversity">
+                        <img src="https://www.treehugger.com/thmb/_oFjSz-02r4eQAOvPoOXJ34XuC0=/2122x1412/filters:fill(auto,1)/GettyImages-900700320-b1b73ac1c38e434396c3cc48b8e640d3.jpg" alt="Image Not Found">
+                        <p class="loss"><b><i>Biodiversity Loss:</i></b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As the climate changes, many species will face habitat loss, fragmentation, invasion, disease, and extinction. This will reduce the diversity and resilience of life on Earth, and affect the provision of ecosystem services that we depend on for food, water, health, recreation, and culture.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="solution">
+                <p class="sol">There are several ways to mitigate the effects of Air and Water Polution. Here are some:</p>
+                <div class="probs">
+                    <div class="water">
+                        <img src="WhatsApp Image 2024-02-29 at 22.54.51.jpeg" alt="Image Not Found">
+                        <p class="scarcity"><b><i>Reduce Carbon Emissions:</i></b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Carbon emissions are one of the primary causes of global warming. Reducing carbon emissions can help slow down the rate of global warming. This can be done by using renewable energy sources, reducing energy consumption, and supporting conservation efforts.</p>
+                    </div>
+                    <div class="sea">
+                        <img src="https://www.rainbowtreecare.com/wp-content/uploads/2018/06/RTC-TreePlant-feature.jpg" alt="Image Not Found">
+                        <p class="level"><b><i>Plant Trees:</i></b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trees absorb carbon dioxide and release oxygen, which can help reduce the amount of carbon dioxide in the atmosphere. Planting trees can help mitigate the effects of global warming.</p>
+                    </div>
+                    <div class="extreme">
+                        <img src="https://octoclean.com/wp-content/uploads/2019/07/AdobeStock_98151121-e1570203135717.jpeg" alt="Image Not Found">
+                        <p class="weather"><b><i>Reduce Waste:</i></b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Landfills/Wastes are a major source of methane (CH<sub>4</sub>) emissions, which is a potent greenhouse gas. Reducing waste can help to reduce the amount of methane released into the atmosphere.</p>
+                    </div>
+                    <div class="biodiversity">
+                        <img src="https://www.twi-global.com/image-library/hero/clean-energy.jpg" alt="Image Not Found">
+                        <p class="loss"><b><i>Clean Energy:</i></b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supporting clean energy initiatives such as wind and solar power can help reduce carbon emissions and mitigate the effects of global warming.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="related">
+            <div class="resources"><p>RELATED RESOURCES</p></div>
+            <div class="grid">
+                <div class="box1">
+                    <img src="https://www.teahub.io/photos/full/267-2671078_vietnam-industry-air-pollution.jpg" alt="Image Not Found">
+                    <h1>Climate Change</h1>
+                    <p>Global temperatures and sea levels are rising, and possibly contributing to larger more devastating storms. This can all be contributed to climate change. Climate change is defined as gradual changes in all the interconnected weather elements on our planet over approximately 30 years. The data shows the Earth is warming and it's up to us to make the changes necessary for a healthier planet.</p>
+                </div>
+                <div class="box2">
+                    <img src="https://th.bing.com/th/id/OIP.mG4TfdWeoDs7WF463359rgHaFj?pid=ImgDet&rs=1" alt="Image Not Found">
+                    <h1>Maybe It's Cold Outside</h1>
+                    <p>Blizzards are predicted to become more intense in the face of climate change, despite shorter winters and rising global temperatures.</p>
+                </div>
+                <div class="box3">
+                    <img src="https://th.bing.com/th/id/OIP.SmXNMMK6lRf2vTwe_GLbuAHaE8?pid=ImgDet&rs=1" alt="Image Not Found">
+                    <h1>Greenhouse Effect</h1>
+                    <p>Global warming describes the current rise in the average temperature of Earth’s air and oceans. Global warming is often described as the most recent example of climate change.</p>
+                </div>
+            </div>
+        </div>
+        <div class="aqi">
+            <div class="quality">
+                <p class="AQI">Air Quality Index (AQI)</p>
+                <p class="index">The Air Quality Index (AQI) is a measure of air pollution at a particular location. It is a number that ranges from 0 to 500, with higher numbers indicating greater levels of pollution and associated health risks.</p>
+                <div class="stats">
+                    <img src="https://static.vecteezy.com/system/resources/previews/001/114/727/original/air-quality-index-with-color-scales-vector.jpg" alt="Image Not Found">
+                    <p>Here's the list of world's top 20 most polluted cities (in Nov '23):</p>
+                    <ol class="list">
+                        <li class="city1">Bhiwadi, India</li>
+                        <li class="city2">New Delhi, India</li>
+                        <li class="city3">Meerut, India</li>
+                        <li class="city4">Patna, India</li>
+                        <li class="city5">Rohtak, India</li>
+                        <li class="city6">Faridabad, India</li>
+                        <li class="city7">Sonipat, India</li>
+                        <li class="city8">Gurgaon, India</li>
+                        <li class="city9">Ghaziabad, India</li>
+                        <li class="city10">Hapur, India</li>
+                        <li class="city11">Noida, India</li>
+                        <li class="city12">Purnea, India</li>
+                        <li class="city13">Balurghat, India</li>
+                        <li class="city14">Raiganj, India</li>
+                        <li class="city15">Muzaffarpur, India</li>
+                        <li class="city16">Jodhpur, India</li>
+                        <li class="city17">Saharsa, India</li>
+                        <li class="city18">Hisar, India</li>
+                        <li class="city19">Lahore, Pakistan</li>
+                        <li class="city20">Bhagalpur, India</li>
+                    </ol>
+                    <i><b><p class="concern">Things are quite concerning if you're an Indian. It's the respinsibility of both government as well as citizens to tackle such situations through measures like installation of air filters, keeping a pollution check on vehicles, promoting public transport and many more. </p></b></i>
+                </div>
+                <div class="check">
+                    Nevertheless, the best option at such situations is to stay back home. Here's the real-time AQI map of world before you plan your trips... <b><i>(click on the button to check AQI on your place)</b></i>
+                    <a href="https://www.aqi.in/#"><input type="button" value="Check AQI"></a>
+                </div>
+            </div>
+        </div>
+        <div class="aqi">
+            <div class="quality">
+                <p class="AQI">Water Quality Index (AQI)</p>
+                <p class="index">The Water Quality Index (WQI) is a numerical measure that assesses the overall quality of water based on various parameters such as dissolved oxygen, pH, turbidity, and pollutant levels.</p>
+                <div class="stats">
+                    <img src="WhatsApp Image 2024-02-290 at 23.08.37.jpeg" alt="Image Not Found">
+                    <p>Here's the list of world's top 20 most polluted cities (in Nov '23):</p>
+                    <ol class="list">
+                        <li class="city1">Niger</li>
+                        <li class="city2">Nigeria</li>
+                        <li class="city3">Togo</li>
+                        <li class="city4">Burundi</li>
+                        <li class="city5">Madagascar</li>
+                        <li class="city6">Eritrea</li>
+                        <li class="city7">Guinea Bissau</li>
+                        <li class="city8">Lesotho</li>
+                        <li class="city9">Cameroon</li>
+                        <li class="city10">Burkina Faso</li>
+                    </ol>
+                </div>
+                <div class="check">
+                    <a href="https://social.niti.gov.in/water-index"><input type="button" value="Check WQI"></a>
+                </div>
+            </div>
+        <div class="footer">
+            <div class="promo">
+                <p class="newsletter" id="subs">Get the Newsletter</p>
+                <p class="email"><input type="email" placeholder="enter your e-mail"></p>
+                <p class="subs"><input type="button" value="Subscribe" onclick="display()"></p>
+            </div>
+            
+                <div class="copyright">&copyLovelyProfessionalUniversity23</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
