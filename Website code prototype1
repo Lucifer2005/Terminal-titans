@@ -356,12 +356,7 @@
             Air and Water Quality Index
         </div>
         <div class="connect">
-            <div>
-                <a href="#home" class="nav-home">Home</a>
-            </div>
-            <div>
-                <a href="#about" class="nav-about">About</a>
-            </div>
+           
             <div>
                 <a href="#subs"><input class="subs-button" type="button" value="Subscribe"></a>
             </div>
